@@ -15,7 +15,9 @@ const NotesList = () => {
 	if (isLoading) content = <p>Loading...</p>;
 
 	if (isError) {
-		content = <p className="errmsg">{error?.data?.message}</p>;
+		content = (
+			<p className="errmsg">{error?.data?.message || "Api not exist"}</p>
+		);
 	}
 
 	if (isSuccess) {
